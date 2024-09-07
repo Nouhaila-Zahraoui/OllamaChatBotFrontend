@@ -1,0 +1,50 @@
+<div id="container">
+  <div id="leftSide">
+    <div class="welcome">
+    Hi there! <br>
+      This is ChatCat <br>
+    For confidential topics, just close the door <br>
+     (please don't)
+    </div>
+    <div class="container">
+      <div class="cat">
+        <div class="cat-head">
+          <div class="cat-ears">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="cat-face">
+            <div class="cat-eyes">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="cat-nose">
+              <div class="mustache">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mustache">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <span class="mouth hide"></span>
+          </div>
+        </div>
+        <div class="hand-wrap">
+          <div class="hand">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="rightSide" class="door">
+    <app-chat></app-chat>
+    <div id="drag" (mousedown)="onMouseDown($event)"></div>
+  </div>
+</div>

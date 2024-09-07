@@ -1,0 +1,42 @@
+<!-- chat.component.html -->
+<div class="container">
+  <div class="chat-section">
+    <div class="header">
+      <img src="../src/app/images/kitty.png" alt="CatChat Logo" class="logo">
+      <h1>ChatCat</h1>
+    </div>
+    <div class="message-container">
+      <ng-container *ngFor="let message of messages">
+        <div class="message" [ngClass]="{ 'to': message.author === 'bot', 'from': message.author === 'user' }">
+          <ng-container *ngIf="message.author === 'user'">
+            <div class="message-content-wrapper">
+              <div class="message-content">
+                {{ message.content }}
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="message.author === 'bot'">
+            <div class="message-content-wrapper">
+              <div class="avatar">
+                <img src="../src/app/images/kitty.png" alt="Bot Avatar">
+              </div>
+              <div class="message-content">
+                {{ message.content }}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+    <div class="chat-input-container">
+      <input
+        [(ngModel)]="value"
+        (keyup.enter)="sendMessage()"
+        type="text"
+        class="styled-input"
+        placeholder="Type your message here..."
+      />
+      <fa-icon [icon]="faPaperPlane" class="send-icon" (click)="sendMessage()"></fa-icon>
+    </div>
+  </div>
+</div>
